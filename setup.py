@@ -38,7 +38,7 @@ tests_require=['zope.testing', 'zc.buildout']
 
 setup(name='collective.recipe.rsync_datafs',
       version=version,
-      description="This recipe aims to formalize the common practice (for the author at least) of adding a part to a buildout to rsync data from production or staging to development for the purposes of demaking it easier to develop against "real" data. It will accept username, source and target parameters then run rsync for you.",
+      description="This recipe aims to formalize the common practice (for the author at least) of adding a part to a buildout to rsync data from production or staging to development for the purposes of demaking it easier to develop against 'real' data. It will accept username, source and target parameters then run rsync for you.",
       long_description=long_description,
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
