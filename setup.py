@@ -13,9 +13,6 @@ version = '0.1'
 long_description = (
     read('README.txt')
     + '\n' +
-    'Detailed Documentation\n'
-    '**********************\n'
-    + '\n' +
     read('collective', 'recipe', 'rsync_datafs', 'README.txt')
     + '\n' +
     'Contributors\n' 
