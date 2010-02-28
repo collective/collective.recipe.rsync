@@ -26,12 +26,12 @@ long_description = (
    'Download\n'
     '********\n'
     )
-entry_point = 'collective.recipe.rsync_datafs:Recipe'
+entry_point = 'collective.recipe.rsync:Recipe'
 entry_points = {"zc.buildout": ["default = %s" % entry_point]}
 
 tests_require=['zope.testing', 'zc.buildout']
 
-setup(name='collective.recipe.rsync_datafs',
+setup(name='collective.recipe.rsync',
       version=version,
       description="Buildout recipe to copy data from one place to another via rsync.",
       long_description=long_description,
@@ -46,7 +46,7 @@ setup(name='collective.recipe.rsync_datafs',
       keywords='plone',
       author='Alex Clark',
       author_email='aclark@aclark.net',
-      url='http://svn.plone.org/svn/collective/buildout/collective.recipe.rsync_datafs/',
+      url='http://svn.plone.org/svn/collective/buildout/collective.recipe.rsync/',
       license='ZPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective', 'collective.recipe'],
@@ -58,6 +58,6 @@ setup(name='collective.recipe.rsync_datafs',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite = 'collective.recipe.rsync_datafs.tests.test_docs.test_suite',
+      test_suite = 'collective.recipe.rsync.tests.test_docs.test_suite',
       entry_points=entry_points,
       )

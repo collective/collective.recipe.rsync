@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Doctest runner for 'collective.recipe.rsync_datafs'.
+Doctest runner for 'collective.recipe.rsync'.
 """
 __docformat__ = 'restructuredtext'
 
@@ -18,7 +18,7 @@ def setUp(test):
     zc.buildout.testing.buildoutSetUp(test)
 
     # Install the recipe in develop mode
-    zc.buildout.testing.install_develop('collective.recipe.rsync_datafs', test)
+    zc.buildout.testing.install_develop('collective.recipe.rsync', test)
 
     # Install any other recipes that should be available in the tests
     #zc.buildout.testing.install('collective.recipe.foobar', test)
@@ -26,7 +26,7 @@ def setUp(test):
 def test_suite():
     suite = unittest.TestSuite((
             doctest.DocFileSuite(
-                '../README.txt',
+                '../../../../README.txt',
                 setUp=setUp,
                 tearDown=zc.buildout.testing.buildoutTearDown,
                 optionflags=optionflags,

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Recipe rsync_datafs"""
+"""Recipe rsync"""
 
 from commands import getoutput
 
