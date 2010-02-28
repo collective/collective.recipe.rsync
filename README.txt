@@ -8,6 +8,8 @@
 Overview
 ========
 
+(Formerly collective.rsync.rsync_datafs.)
+
 This is a simple zc.buildout recipe to to synchronize data 
 from one place to another. E.g. it can be used to transfer 
 a Zope Data.fs file from production to development.
