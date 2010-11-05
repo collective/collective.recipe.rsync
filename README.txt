@@ -3,11 +3,11 @@ Overview
 ========
 
 This is a simple ``zc.buildout`` recipe to to synchronize data
-from one place to another. E.g. it can be used to transfer 
+from one place to another. It can be used to transfer 
 a ZODB ``Data.fs`` file from production to development.
 
 It assumes you have a UNIX-based operating system, and that
-the ``rsync`` binary is in your path when you run buildout.
+the ``rsync`` binary is in your path when you run ``Buildout``.
 
 Supported options
 -----------------
