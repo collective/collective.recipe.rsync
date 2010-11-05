@@ -3,15 +3,27 @@
 
 from commands import getoutput
 
+line = ('----------------------------------------' +
+        '----------------------------------------')
+
+
 class Recipe(object):
     """zc.buildout recipe"""
 
     def __init__(self, buildout, name, options):
         self.buildout, self.name, self.options = buildout, name, options
-        source=options['source'] 
-        target=options['target']
-        print 'Rsyncing data… this could take a while!'
-        print(getoutput('rsync -av --partial --progress %s %s' % (source,target)))
+        source = options['source']
+        target = options['target']
+        cmd = '  rsync -av --partial --progress %s %s' % (source, target)
+
+        print line
+        print 'Running rsync...'
+        print cmd
+        print '  this may take a while!'
+        print getoutput('rsync -av --partial --progress %s %s' % (
+            source, target))
+        print 'Done.'
+        print line
 
     def install(self):
         """Installer"""
