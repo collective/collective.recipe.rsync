@@ -11,11 +11,11 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '1.1'
+version = '1.2'
 long_description = (
     read('README.txt') +
-    read('docs/CONTRIBUTORS.txt') +
-    read('docs/HISTORY.txt'))
+    read('docs/HISTORY.txt') +
+    read('docs/CONTRIBUTORS.txt'))
 entry_point = 'collective.recipe.rsync:Recipe'
 entry_points = {"zc.buildout": ["default = %s" % entry_point]}
 tests_require = ['zope.testing', 'zc.buildout']

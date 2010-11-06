@@ -25,7 +25,7 @@ This recipe supports the following options:
 Example usage
 -------------
 
-Here we extend a buildout.cfg to add a database part::
+Here is an example ``database.cfg`` file::
 
     [buildout]
     extends = buildout.cfg
@@ -33,9 +33,8 @@ Here we extend a buildout.cfg to add a database part::
 
     [database]
     recipe = collective.recipe.rsync
-    source = aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
+    source = user@host.com:/srv/plone/var/filestorage/Data.fs
     target = var/filestorage/Data.fs
-
 
 Contact
 -------
