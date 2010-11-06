@@ -15,11 +15,9 @@ Supported options
 This recipe supports the following options:
 
 +-------+--------------------------------------------------------------------+
-|source |The source argument to pass to rsync, e.g.                          |
-|       |user@somehost.com:/srv/client/var/filestorage/Data.fs               |
+|source |The source argument to pass to rsync                                |
 +-------+--------------------------------------------------------------------+
-|target |The destination argument to pass to rsync, e.g.                     |
-|       |${buildout:directory}/var/filestorage/Data.fs                       |
+|target |The destination argument to pass to rsync                           |
 +-------+--------------------------------------------------------------------+
 
 Example usage
@@ -35,6 +33,17 @@ Here is an example ``database.cfg`` file::
     recipe = collective.recipe.rsync
     source = user@host.com:/srv/plone/var/filestorage/Data.fs
     target = var/filestorage/Data.fs
+
+Then when you run Buildout you should see something like this::
+
+    $ bin/buildout -c database.cfg
+    ...
+    --------------------------------------------------------------------------------
+    Running rsync...
+      rsync -av --partial --progress
+    client.com:/srv/client/var/filestorage/Data.fs
+    /Users/aclark/Developer/Products.client/var/filestorage
+      this may take a while!
 
 Contact
 -------
