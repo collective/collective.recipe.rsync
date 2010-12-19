@@ -2,6 +2,13 @@
 Changelog
 ---------
 
+1.2 (2010-12-19)
+~~~~~~~~~~~~~~~~
+
+- Fix docs
+- Add new test harness
+- Clean up package
+
 1.1 (2010-11-05)
 ~~~~~~~~~~~~~~~~
 

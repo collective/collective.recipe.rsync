@@ -1,29 +1,22 @@
+.. contents::
 
-Overview
-========
+Introduction
+============
 
-This is a simple ``zc.buildout`` recipe to to synchronize data
-from one place to another. It can be used to transfer 
-a ZODB ``Data.fs`` file from production to development.
+``collective.recipe.rsync`` is a ``zc.buildout`` recipe that makes it easy to
+synchronize data between two locations, via the ``rsync`` program. 
 
-It assumes you have a UNIX-based operating system, and that
-the ``rsync`` binary is in your path when you run ``Buildout``.
+It was originally created to make it easier to synchronize ``Data.fs``
+files between production and development environments. But you can use it to 
+synchronize any tree of data e.g. ZODB blob files, and so on.
 
-Supported options
------------------
+Currently, it assumes you have a UNIX-based operating system and that
+the ``rsync`` binary is in your path when you run buildout.
 
-This recipe supports the following options:
+Usage
+-----
 
-+-------+--------------------------------------------------------------------+
-|source |The source argument to pass to rsync                                |
-+-------+--------------------------------------------------------------------+
-|target |The destination argument to pass to rsync                           |
-+-------+--------------------------------------------------------------------+
-
-Example usage
--------------
-
-Here is an example ``database.cfg`` file::
+Add a section for it to your ``buildout.cfg`` file, e.g. ``database``::
 
     [buildout]
     extends = buildout.cfg
@@ -31,22 +24,19 @@ Here is an example ``database.cfg`` file::
 
     [database]
     recipe = collective.recipe.rsync
-    source = user@host.com:/srv/plone/var/filestorage/Data.fs
+    source = aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
     target = var/filestorage/Data.fs
 
-Then when you run Buildout you should see something like this::
+Run buildout. You should see::
 
-    $ bin/buildout -c database.cfg
-    ...
     --------------------------------------------------------------------------------
     Running rsync...
       rsync -av --partial --progress
-    client.com:/srv/client/var/filestorage/Data.fs
-    /Users/aclark/Developer/Products.client/var/filestorage
+    aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
+    var/filestorage/Data.fs
       this may take a while!
 
 Contact
 -------
 
-- Questions and comments to aclark@aclark.net.
-- Report bugs to aclark@aclark.net.
+Comments/questions/concerns? Email: aclark@aclark.net
