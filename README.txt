@@ -16,10 +16,9 @@ the ``rsync`` binary is in your path when you run buildout.
 Usage
 -----
 
-Add a section for it to your ``buildout.cfg`` file, e.g. ``database``::
+Add a section to your ``buildout.cfg`` file, e.g. ``database``::
 
     [buildout]
-    extends = buildout.cfg
     parts += database
 
     [database]
