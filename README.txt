@@ -7,7 +7,7 @@ Introduction
 synchronize data between two locations, via the ``rsync`` program. 
 
 It was originally created to make it easier to synchronize ``Data.fs``
-files between production and development environments. But you can use it to 
+files between Plone production and development environments. But you can use it to 
 synchronize any tree of data e.g. ZODB blob files, and so on.
 
 Currently, it assumes you have a UNIX-based operating system and that
