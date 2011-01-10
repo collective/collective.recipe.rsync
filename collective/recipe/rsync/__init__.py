@@ -26,8 +26,10 @@ class Recipe(object):
         print cmd
         print '  this may take a while!'
 
-        print getoutput('rsync -av --partial --progress %s %s' % (
-            source, target))
+        if 'port' in options:
+            print getoutput(cmd % (port, source, target))
+        else:
+            print getoutput(cmd % (source, target))
 
         print 'Done.'
 
