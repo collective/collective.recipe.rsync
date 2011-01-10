@@ -36,10 +36,10 @@ Run buildout. You should see::
       this may take a while!
 
 
-Optional
-~~~~~~~~
+Alternate ssh port
+~~~~~~~~~~~~~~~~~~
 
-Optionally you can specify an alternate ssh port for rsync::
+Optionally, you can specify an alternate ssh port for rsync to use::
 
     [database]
     recipe = collective.recipe.rsync
