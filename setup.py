@@ -9,8 +9,8 @@ def read(*rnames):
 
 setup(
     name='collective.recipe.rsync',
-    version='1.3',
-    description='Buildout recipe to copy data from one place to another.',
+    version='1.4',
+    description='Copy data from source to target',
     long_description=read('README.txt') + read('docs/HISTORY.txt'),
     classifiers=[
       'Framework :: Buildout',
