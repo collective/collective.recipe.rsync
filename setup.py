@@ -36,5 +36,7 @@ setup(
     entry_points={
         "zc.buildout":
             ["default = %s" % 'collective.recipe.rsync:Recipe']},
-    tests_require=['zope.testing', 'zc.buildout']
+    extras_require={
+        'tests': ['zope.testing'],
+    },
     )
