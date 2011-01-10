@@ -19,7 +19,7 @@ class Recipe(object):
 
         if 'port' in options:
             port = options['port']
-            cmd = '  rsync -e `ssh -p %s` -av --partial --progress %s %s' % (port, source, target)
+            cmd = "  rsync -e 'ssh -p %s' -av --partial --progress %s %s" % (port, source, target)
 
         print line
         print 'Running rsync...'
