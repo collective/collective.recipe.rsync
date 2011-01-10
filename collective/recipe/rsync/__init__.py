@@ -19,20 +19,15 @@ class Recipe(object):
 
         if 'port' in options:
             port = options['port']
-            cmd = "  rsync -e 'ssh -p %s' -av --partial --progress %s %s" % (port, source, target)
+            cmd = "  rsync -e 'ssh -p %s' -av --partial --progress %s %s" % (
+                port, source, target)
 
         print line
         print 'Running rsync...'
         print cmd
         print '  this may take a while!'
-
-        if 'port' in options:
-            print getoutput(cmd % (port, source, target))
-        else:
-            print getoutput(cmd % (source, target))
-
+        print getoutput(cmd)
         print 'Done.'
-
         print line
 
     def install(self):
