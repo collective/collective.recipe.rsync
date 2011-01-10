@@ -2,6 +2,13 @@
 Changelog
 ---------
 
+1.5 (2010-01-10)
+~~~~~~~~~~~~~~~~
+
+- Doc fixes
+
+  - Add a note about UNIX compat only
+
 1.4 (2011-01-10)
 ~~~~~~~~~~~~~~~~
 
