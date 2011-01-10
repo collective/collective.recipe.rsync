@@ -10,8 +10,10 @@ It was originally created to make it easier to synchronize ``Data.fs``
 files between Plone production and development environments. But you can use it to 
 synchronize any tree of data e.g. ZODB blob files, and so on.
 
-Currently, it assumes you have a UNIX-based operating system and that
-the ``rsync`` binary is in your path when you run buildout.
+.. Note::
+
+    Currently, it assumes you have a UNIX-based operating system and that
+    the ``rsync`` binary is in your path when you run buildout.
 
 Usage
 -----
