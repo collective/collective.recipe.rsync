@@ -12,8 +12,9 @@ synchronize any tree of data e.g. ZODB blob files, and so on.
 
 .. Note::
 
-    Currently, it assumes you have a UNIX-based operating system and that
-    the ``rsync`` binary is in your path when you run buildout.
+    Currently ``collective.recipe.rsync`` assumes you have a UNIX-based
+    operating system, and that the ``rsync`` binary is in your path when you
+    run buildout.
 
 Usage
 -----
@@ -41,7 +42,7 @@ Run buildout. You should see::
 Alternate ssh port
 ~~~~~~~~~~~~~~~~~~
 
-Optionally, you can specify an alternate ssh port for rsync to use::
+Optionally, you may specify an alternate ssh port for rsync to use::
 
     [database]
     recipe = collective.recipe.rsync
