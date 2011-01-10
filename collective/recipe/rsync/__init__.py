@@ -17,7 +17,7 @@ class Recipe(object):
 
         cmd = '  rsync -av --partial --progress %s %s' % (source, target)
 
-        if port in options:
+        if 'port' in options:
             port = options['port']
             cmd = '  rsync -e `ssh -p %s` -av --partial --progress %s %s' % (port, source, target)
 
