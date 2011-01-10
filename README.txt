@@ -35,7 +35,19 @@ Run buildout. You should see::
     var/filestorage/Data.fs
       this may take a while!
 
+
+Optional
+~~~~~~~~
+
+Optionally you can specify an alternate ssh port for rsync::
+
+    [database]
+    recipe = collective.recipe.rsync
+    source = aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
+    target = var/filestorage/Data.fs
+    port = 22001
+
 Contact
 -------
 
-Comments/questions/concerns? Email: aclark@aclark.net
+Comments, questions, concerns? Email: aclark@aclark.net
