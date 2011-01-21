@@ -78,7 +78,7 @@ Run buildout; you should see::
     Installing sample.
     Generated script '/Users/aclark/Developer/collective/collective.recipe.rsync/bin/rsync-sample'.
 
-Notice that ``rsync`` is no longer executed when you run buildout. Now you may run
+Notice that ``rsync`` is no longer executed when you run buildout. You may now run
 the ``rsync`` script whenever you like::
 
     $ bin/rsync-sample
