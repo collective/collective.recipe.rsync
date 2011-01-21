@@ -2,43 +2,51 @@
 Changelog
 ---------
 
-1.5 (2010-01-10)
+1.6 (2011-01-20)
 ~~~~~~~~~~~~~~~~
 
-- Doc fixes
+* Add ``script`` option 
+  - Generates bin/rsync script
+  - Disables rsync during buildout execution
+  - Facilitates creation of scheduled rsyncs via cron
+
+1.5 (2011-01-10)
+~~~~~~~~~~~~~~~~
+
+* Doc fixes
 
   - Add a note about UNIX compat only
 
 1.4 (2011-01-10)
 ~~~~~~~~~~~~~~~~
 
-- Support alternate ssh ``port`` parameter in recipe section. This allows
+* Support alternate ssh ``port`` parameter in recipe section. This allows
   ``collective.recipe.rsync`` to execute rsync with: -e 'ssh <port>', which
   facilitates copying over non-standard ssh ports.
 
 1.3 (2010-12-19)
 ~~~~~~~~~~~~~~~~
 
-- Fix docs
+* Fix docs
 
 1.2 (2010-12-19)
 ~~~~~~~~~~~~~~~~
 
-- Fix docs
-- Add new test harness
-- Clean up package
+* Fix docs
+* Add new test harness
+* Clean up package
 
 1.1 (2010-11-05)
 ~~~~~~~~~~~~~~~~
 
-- Modified output to include rsync command line being executed
+* Modified output to include rsync command line being executed
 
 1.0 (2010-02-28)
 ~~~~~~~~~~~~~~~~
 
-- Rename package from collective.recipe.rsync_datafs to collective.recipe.rsync
+* Rename package from collective.recipe.rsync_datafs to collective.recipe.rsync
 
 0.1 (2009-08-26)
 ~~~~~~~~~~~~~~~~
 
-- Created recipe with ZopeSkel 
+* Created recipe with ZopeSkel 
