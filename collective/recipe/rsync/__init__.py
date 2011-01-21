@@ -53,7 +53,7 @@ class Recipe(object):
             bindir = self.buildout['buildout']['bin-directory']
             arguments = "source='%s', target='%s', port='%s'"
             create_script(
-                [('rsync', 'collective.recipe.rsync.__init__', 'rsync')],
+                [('rsync-%s' % self.name, 'collective.recipe.rsync.__init__', 'rsync')],
                 working_set, executable, bindir, arguments=arguments % (
                 self.source, self.target, self.port))
             return tuple((bindir + '/' + 'rsync',))
