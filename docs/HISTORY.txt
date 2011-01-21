@@ -2,10 +2,13 @@
 Changelog
 ---------
 
-1.7 (2011-01-20)
+1.7 (2011-01-21)
 ~~~~~~~~~~~~~~~~
 
 * Doc fixes
+* Make script name based on section name
+
+  - Support more than one script in the same buildout
 
 1.6 (2011-01-20)
 ~~~~~~~~~~~~~~~~

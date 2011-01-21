@@ -3,13 +3,12 @@
 Introduction
 ============
 
-``collective.recipe.rsync`` is a ``zc.buildout`` recipe that makes it easy to
-synchronize data between two locations, via the ``rsync`` program. 
+``collective.recipe.rsync`` is a ``zc.buildout`` recipe that copies
+data between two places via the ``rsync`` program. 
 
 It was originally created to copy a ``Data.fs`` file between two Plone
-environments (i.e. from production to development). But
-you can use it to synchronize any data; e.g. ZODB blob files and so on. See
-example below.
+environments (from production to development). But
+you can use it to copy any file or files; e.g. ZODB blob files, and so on.
 
 .. Note::
 
@@ -34,7 +33,6 @@ Add a section to your ``buildout.cfg`` file, e.g. ``filestorage``::
 
 Run buildout; you should see:: 
 
-    --------------------------------------------------------------------------------
     Running rsync...
       rsync -av --partial --progress
     aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
@@ -80,9 +78,10 @@ Run buildout; you should see::
     Installing rsync.
     Generated script '/Users/aclark/Developer/collective/collective.recipe.rsync/bin/rsync'.
 
-Notice that rsync no longer runs when you run bin/buildout. Now you may run rsync whenever you like::
+Notice that rsync is no longer executed when you run buildout. Now you may run
+the rsync script whenever you like::
 
-    $ bin/rsync 
+    $ bin/rsync-rsync
     --------------------------------------------------------------------------------
     Running rsync...
       rsync -e 'ssh -p None' -av --partial --progress sample_input.txt
@@ -97,12 +96,12 @@ Notice that rsync no longer runs when you run bin/buildout. Now you may run rsyn
     --------------------------------------------------------------------------------
 
 Further, you may now consider executing an rsync script automatically via cron
-(see: z3c.recipe.usercrontab).
+(see: http://pypi.python.org/pypi/z3c.recipe.usercrontab).
 
 Example
 -------
 
-Here is a full example ``database.cfg`` file that demonstrates how to copy a
+Here are the contents of an example ``database.cfg`` file; this demonstrates how to copy a
 ``Data.fs`` file and ``var/blobstorage`` files::
 
     [buildout]
