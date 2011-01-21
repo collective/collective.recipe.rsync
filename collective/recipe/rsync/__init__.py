@@ -34,27 +34,31 @@ class Recipe(object):
         self.buildout, self.name, self.options = buildout, name, options
         self.source = options['source']
         self.target = options['target']
+        self.port = None
+        self.script = False
         if 'port' in options:
             self.port = options['port']
-            rsync(source=self.source, target=self.target, port=self.port)
-        else:
-            rsync(source=self.source, target=self.target, port=None)
+        if 'script' in options:
+            if options['script'] == 'true':
+                self.script = True
+                return
+
+        # if we make it this far, script option is not set so we execute
+        # as buildout runs
+        rsync(source=self.source, target=self.target, port=self.port)
 
     def install(self):
         """Installer"""
-        # XXX Implement recipe functionality here
-        bindir = self.buildout['buildout']['bin-directory']
-
-        # Return files that were created by the recipe. The buildout
-        # will remove all returned files upon reinstall.
-
-        arguments = "source='%s', target='%s', port='%s'"
-        # http://pypi.python.org/pypi/zc.buildout#the-scripts-function
-        create_script([('rsync', 'collective.recipe.rsync.__init__', 'rsync')],
-            working_set, executable, bindir, arguments=arguments % (
+        if self.script:
+            bindir = self.buildout['buildout']['bin-directory']
+            arguments = "source='%s', target='%s', port='%s'"
+            create_script(
+                [('rsync', 'collective.recipe.rsync.__init__', 'rsync')],
+                working_set, executable, bindir, arguments=arguments % (
                 self.source, self.target, self.port))
-
-        return tuple((bindir + '/' + 'rsync',))
+            return tuple((bindir + '/' + 'rsync',))
+        else:
+            return tuple()
 
     def update(self):
         """Updater"""
