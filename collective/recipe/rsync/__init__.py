@@ -10,6 +10,7 @@ from zc.buildout.easy_install import scripts as create_script
 line = ('----------------------------------------' +
         '----------------------------------------')
 
+
 def rsync(source=None, target=None, port=None):
     if port:
         cmd = "  rsync -e 'ssh -p %s' -av --partial --progress %s %s" % (
@@ -39,8 +40,6 @@ class Recipe(object):
         else:
             rsync(source=self.source, target=self.target, port=None)
 
-
-
     def install(self):
         """Installer"""
         # XXX Implement recipe functionality here
@@ -49,13 +48,13 @@ class Recipe(object):
         # Return files that were created by the recipe. The buildout
         # will remove all returned files upon reinstall.
 
-
+        arguments = "source='%s', target='%s', port='%s'"
         # http://pypi.python.org/pypi/zc.buildout#the-scripts-function
         create_script([('rsync', 'collective.recipe.rsync.__init__', 'rsync')],
-            working_set, executable, bindir, arguments="source='%s', target='%s', port='%s'" % (self.source, self.target, self.port))
+            working_set, executable, bindir, arguments=arguments % (
+                self.source, self.target, self.port))
 
         return tuple((bindir + '/' + 'rsync',))
-
 
     def update(self):
         """Updater"""
