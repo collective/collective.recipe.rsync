@@ -34,9 +34,7 @@ Add a section to your ``buildout.cfg`` file, e.g. ``filestorage``::
 Run buildout; you should see:: 
 
     Running rsync...
-      rsync -av --partial --progress
-    aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
-    var/filestorage/Data.fs
+      rsync -av --partial --progress aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs var/filestorage/Data.fs
       this may take a while!
     ...
 
@@ -54,9 +52,7 @@ Optionally, you may specify an alternate SSH port for ``rsync`` to use::
 Run buildout; you should see:: 
 
     Running rsync...
-      rsync -e 'ssh -p 22001' -av --partial --progress 
-    aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs
-    var/filestorage/Data.fs
+      rsync -e 'ssh -p 22001' -av --partial --progress aclark@aclark.net:/srv/aclark/var/filestorage/Data.fs var/filestorage/Data.fs
       this may take a while!
     ...
 
@@ -84,8 +80,7 @@ the ``rsync`` script whenever you like::
     $ bin/rsync-sample
     ...
     Running rsync...
-      rsync -e 'ssh -p None' -av --partial --progress sample_input.txt
-    sample_input_copy.txt
+      rsync -e 'ssh -p None' -av --partial --progress sample_input.txt sample_input_copy.txt
       this may take a while!
     ...
 
