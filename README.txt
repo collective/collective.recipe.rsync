@@ -8,7 +8,7 @@ data between two places via the ``rsync`` program.
 
 It was originally created to copy a ``Data.fs`` file between two Plone
 environments (from production to development). But
-you can use it to copy any file or files; e.g. ZODB blob files, and so on.
+you can use it to copy any file or set of files; e.g. ZODB blob files, and so on.
 
 .. Note::
 
