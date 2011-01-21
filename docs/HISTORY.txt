@@ -2,10 +2,16 @@
 Changelog
 ---------
 
+1.7 (2011-01-20)
+~~~~~~~~~~~~~~~~
+
+* Doc fixes
+
 1.6 (2011-01-20)
 ~~~~~~~~~~~~~~~~
 
 * Add ``script`` option 
+
   - Generates bin/rsync script
   - Disables rsync during buildout execution
   - Facilitates creation of scheduled rsyncs via cron

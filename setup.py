@@ -9,7 +9,7 @@ def read(*rnames):
 
 setup(
     name='collective.recipe.rsync',
-    version='1.6',
+    version='1.7',
     description='A zc.buildout recipe to copy data from one location to another',
     long_description=read('README.txt') + read('docs/HISTORY.txt'),
     classifiers=[
