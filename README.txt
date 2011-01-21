@@ -95,7 +95,7 @@ Further, you may now execute an ``rsync`` script automatically via cron
 Example
 -------
 
-Here are the contents of an example ``database.cfg`` file; this demonstrates how to copy a
+Here are the contents of a sample ``database.cfg`` file; this example demonstrates how to copy a
 ``Data.fs`` file and ``var/blobstorage`` files::
 
     [buildout]
