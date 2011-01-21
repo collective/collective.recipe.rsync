@@ -43,7 +43,7 @@ Run buildout; you should see::
 Specify alternate SSH port
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Optionally, you may specify an alternate SSH port for rsync to use::
+Optionally, you may specify an alternate SSH port for ``rsync`` to use::
 
     [filestorage]
     recipe = collective.recipe.rsync
@@ -63,9 +63,9 @@ Run buildout; you should see::
 Create a script
 ~~~~~~~~~~~~~~~
 
-Optionally, you may create a rsync script to execute later. Just configure ``script = true`` like so::
+Optionally, you may create a ``rsync`` script to execute later. Just configure ``script = true`` like so::
 
-    [rsync]
+    [sample]
     recipe = collective.recipe.rsync
     source = sample_input.txt
     target = sample_input_copy.txt
@@ -75,27 +75,21 @@ Run buildout; you should see::
 
     $ bin/buildout
     ...
-    Installing rsync.
-    Generated script '/Users/aclark/Developer/collective/collective.recipe.rsync/bin/rsync'.
+    Installing sample.
+    Generated script '/Users/aclark/Developer/collective/collective.recipe.rsync/bin/rsync-sample'.
 
-Notice that rsync is no longer executed when you run buildout. Now you may run
-the rsync script whenever you like::
+Notice that ``rsync`` is no longer executed when you run buildout. Now you may run
+the ``rsync`` script whenever you like::
 
-    $ bin/rsync-rsync
-    --------------------------------------------------------------------------------
+    $ bin/rsync-sample
+    ...
     Running rsync...
       rsync -e 'ssh -p None' -av --partial --progress sample_input.txt
     sample_input_copy.txt
       this may take a while!
-    building file list ... 
-    1 file to consider
+    ...
 
-    sent 88 bytes  received 20 bytes  216.00 bytes/sec
-    total size is 245  speedup is 2.27
-    Done.
-    --------------------------------------------------------------------------------
-
-Further, you may now consider executing an rsync script automatically via cron
+Further, you may now consider executing an ``rsync`` script automatically via cron
 (see: http://pypi.python.org/pypi/z3c.recipe.usercrontab).
 
 Example
