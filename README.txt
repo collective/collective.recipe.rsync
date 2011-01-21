@@ -89,7 +89,7 @@ the ``rsync`` script whenever you like::
       this may take a while!
     ...
 
-Further, you may now consider executing an ``rsync`` script automatically via cron
+Further, you may now execute an ``rsync`` script automatically via cron
 (see: http://pypi.python.org/pypi/z3c.recipe.usercrontab).
 
 Example
