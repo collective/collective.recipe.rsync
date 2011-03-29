@@ -21,7 +21,7 @@ def rsync(source=None, target=None, port=None):
     _LOG.info(line)
     _LOG.info('Running rsync with command: ')
     _LOG.info('  $ %s' % ' '.join(cmd))
-    _LOG.info('  Note: depending on the target size, this may take a while!')
+    _LOG.info('  Note: depending on the source file(s) size and location, this may take a while!')
     _LOG.info(line)
     subprocess.call(cmd)
     _LOG.info('Done.')
