@@ -2,6 +2,7 @@
 """Recipe rsync"""
 
 import logging
+import sys
 import subprocess
 from pkg_resources import working_set
 from sys import executable
@@ -40,11 +41,7 @@ class Recipe(object):
         if 'script' in options:
             if options['script'] == 'true':
                 self.script = True
-                return
 
-        # if we make it this far, script option is not set so we execute
-        # as buildout runs
-        rsync(source=self.source, target=self.target, port=self.port)
 
     def install(self):
         """Installer"""
@@ -57,6 +54,9 @@ class Recipe(object):
                 self.source, self.target, self.port))
             return tuple((bindir + '/' + 'rsync',))
         else:
+            # if we make it this far, script option is not set so we execute
+            # as buildout runs
+            rsync(source=self.source, target=self.target, port=self.port)
             return tuple()
 
     def update(self):
