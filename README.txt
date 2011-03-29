@@ -4,7 +4,7 @@ Introduction
 ============
 
 ``collective.recipe.rsync`` is a ``zc.buildout`` recipe that copies a
-file or files between two locations via the ``rsync`` program. 
+file (or files) between two locations via the ``rsync`` program. 
 
 It was originally created to make it easy to copy a ``Data.fs`` file
 between two Plone application environments e.g. from production to
@@ -32,6 +32,8 @@ Add a section to your ``buildout.cfg`` file, e.g. ``data``::
     source = myhost.com:/path/to/Data.fs
     target = var/filestorage/Data.fs
 
+This copies a Data.fs file from myhost.com to ./var/filestorage/Data.fs.
+
 Specify alternate SSH port
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -42,6 +44,9 @@ Optionally, you may specify an alternate SSH port for ``rsync`` to use::
     source = myhost.com:/path/to/Data.fs
     target = var/filestorage/Data.fs
     port = 22001
+
+This copies a Data.fs file from myhost.com to ./var/filestorage/Data.fs over
+port 22001.
 
 Create a script
 ~~~~~~~~~~~~~~~
@@ -83,7 +88,7 @@ Here is a real life example. This is one of the ways in which the author uses
     script = true
 
 As the warning suggests, you should be careful with this. The author uses this
-particular configuration to deploy his staging site to production.
+particular configuration to deploy a staging site to production.
 
 Contact
 -------

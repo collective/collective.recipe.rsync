@@ -2,11 +2,12 @@
 Changelog
 ---------
 
-1.8 (2011-03-30)
+1.8 (2011-03-29)
 ~~~~~~~~~~~~~~~~
 
-* Replace print statements with logger [aclark]
 * Switched to using subprocess to call rsync (to show progress to stdout) [mattss]
+* Replace print statements with logger [aclark]
+* Update docs
 
 1.7 (2011-01-21)
 ~~~~~~~~~~~~~~~~

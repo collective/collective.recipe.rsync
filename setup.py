@@ -10,7 +10,7 @@ def read(*rnames):
 setup(
     name='collective.recipe.rsync',
     version='1.8',
-    description='A zc.buildout recipe to copy a file (or set of files) from one location to another',
+    description='A zc.buildout recipe to copy a file (or files) from one location to another via rsync.',
     long_description=read('README.txt') + read('docs/HISTORY.txt'),
     classifiers=[
       'Framework :: Buildout',
