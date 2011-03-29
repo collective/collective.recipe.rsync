@@ -1,33 +1,29 @@
 # -*- coding: utf-8 -*-
 """Recipe rsync"""
 
+import logging
 import subprocess
 from pkg_resources import working_set
 from sys import executable
 from zc.buildout.easy_install import scripts as create_script
 
-
-line = ('----------------------------------------' +
-        '----------------------------------------')
-
+_LOG = logging.getLogger("c.r.rsync")
+line = ('-----------------------------------' +
+        '-----------------------------------')
 
 def rsync(source=None, target=None, port=None):
     if port:
-        #cmd = "  rsync -e 'ssh -p %s' -av --partial --progress %s %s" % (
-        #    port, source, target)
-        cmd = ["rsync", "-e", "ssh -p %s" % port, "-av", 
-               "--partial", "--progress", source, target]
+        cmd = ['rsync', '-e', 'ssh -p %s' % port, '-av', '--partial',
+            '--progress', source, target]
     else:
-        cmd =["rsync", "-av", "--partial", "--progress", source, target]
-
-    print line
-    print 'Running rsync with command: \n'
-    print '  $ %s\n' % ' '.join(cmd)
-    print '  Note: depending on the file size, this may take a while!'
-    print line
+        cmd = ['rsync', '-av', '--partial', '--progress', source, target]
+    _LOG.info(line)
+    _LOG.info('Running rsync with command: ')
+    _LOG.info('  $ %s' % ' '.join(cmd))
+    _LOG.info('  Note: depending on the target size, this may take a while!')
+    _LOG.info(line)
     subprocess.call(cmd)
-    print 'Done.'
-    print line
+    _LOG.info('Done.')
 
 
 class Recipe(object):
