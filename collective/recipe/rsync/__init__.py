@@ -61,4 +61,4 @@ class Recipe(object):
 
     def update(self):
         """Updater"""
-        pass
+        self.install()
