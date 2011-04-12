@@ -3,8 +3,8 @@
 Introduction
 ============
 
-``collective.recipe.rsync`` is a ``zc.buildout`` recipe that copies a
-file (or files) between two locations via the ``rsync`` program. 
+``collective.recipe.rsync`` is a ``zc.buildout`` recipe that copies
+files between two locations via the ``rsync`` program. 
 
 It was originally created to make it easy to copy a ``Data.fs`` file
 between two Plone application environments e.g. from production to
