@@ -11,7 +11,7 @@ setup(
     name='collective.recipe.rsync',
     version='2.0.0',
     description='A zc.buildout recipe to copy files from one location to another via rsync',
-    long_description=read('README.txt') + read('docs/HISTORY.txt'),
+    long_description=read('README.rst') + read('docs/HISTORY.txt'),
     classifiers=[
       'Framework :: Buildout',
       'Intended Audience :: Developers',
