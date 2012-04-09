@@ -1,42 +1,41 @@
-
+from setuptools import find_packages
+from setuptools import setup
 import os
-from setuptools import setup, find_packages
 
-
-def read(*rnames):
-    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+VERSION='2.0.1'
 
 
 setup(
-    name='collective.recipe.rsync',
-    version='2.0.0',
-    description='A zc.buildout recipe to copy files from one location to another via rsync',
-    long_description=read('README.rst') + read('docs/HISTORY.txt'),
-    classifiers=[
-      'Framework :: Buildout',
-      'Intended Audience :: Developers',
-      'Topic :: Software Development :: Build Tools',
-      'Topic :: Software Development :: Libraries :: Python Modules',
-      'License :: OSI Approved :: Zope Public License',
-      ],
     author='Alex Clark',
     author_email='aclark@aclark.net',
-    url=('http://svn.plone.org/svn/collective/buildout/'
-        'collective.recipe.rsync/'),
-    license='ZPL',
-    packages=find_packages(exclude=['ez_setup']),
-    namespace_packages=[
-        'collective',
-        'collective.recipe'],
+    classifiers=[
+        'Framework :: Buildout',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'License :: OSI Approved :: Zope Public License',
+    ],
+    description='A zc.buildout recipe to copy files from one location to another via rsync',
+    entry_points={
+        'zc.buildout': 'default = collective.recipe.rsync:Recipe'
+    },
     include_package_data=True,
-    zip_safe=False,
     install_requires=[
         'setuptools',
-        'zc.buildout'],
-    entry_points={
-        "zc.buildout":
-            ["default = %s" % 'collective.recipe.rsync:Recipe']},
-    extras_require={
-        'tests': ['zope.testing'],
-    },
+        'zc.buildout',
+    ],
+    license='ZPL',
+    long_description=(
+        open('README.rst').read() +
+        open(os.path.join('docs', 'HISTORY.txt'))
     )
+    name='collective.recipe.rsync',
+    namespace_packages=[
+        'collective',
+        'collective.recipe'
+    ],
+    packages=find_packages(),
+    url=('http://svn.plone.org/svn/collective/buildout/',
+    version='2.0.0',
+    zip_safe=False,
+)
