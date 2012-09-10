@@ -49,6 +49,17 @@ Normally ``collective.recipe.rsync`` will run ``rsync`` during the recipe instal
 
 This is useful in cases where you want to automate an ``rsync`` script with cron e.g. via `z3c.recipe.usercrontab`_.
 
+
+Ignore files
+~~~~~~~~~~~~
+
+You can specify files to ignore with the ignore option::
+
+    [rsync]
+    recipe = collective.recipe.rsync
+    source = remotehost:/var/filestorage/
+    target = ${buildout:directory}/var/filestorage
+    ignore = index old
+
 .. _`zc.buildout`: http://pypi.python.org/pypi/zc.buildout
 .. _`z3c.recipe.usercrontab`: http://pypi.python.org/pypi/z3c.recipe.usercrontab
-
