@@ -5,7 +5,7 @@ Introduction
 
 .. Note::
 
-    ``collective.recipe.rsync`` currently assumes you have a UNIX-based operating system and that the ``rsync`` binary is in your path when you execute buildout or the rsync script. Ideas for Windows support are welcome.
+    ``collective.recipe.rsync`` currently assumes you have a UNIX-based operating system and that the ``rsync`` binary is in your path when you execute buildout or the rsync script. Ideas for Windows support welcome.
 
 Installation
 ------------
@@ -13,7 +13,7 @@ Installation
 Add a section to your ``buildout.cfg`` file, e.g.::
 
     [buildout]
-    http://build.pythonpackages.com/buildout/plone/latest
+    http://pythonpackages.com/buildout/plone/4.2.x
     parts += rsync
 
     [rsync]
