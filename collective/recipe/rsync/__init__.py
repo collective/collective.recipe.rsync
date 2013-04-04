@@ -42,12 +42,11 @@ class Recipe(object):
             if options['script'] == 'true':
                 self.script = True
 
-
     def install(self):
         """Installer"""
         if self.script:
             bindir = self.buildout['buildout']['bin-directory']
-            arguments = "source='%s', target='%s', port='%s'"
+            arguments = "source='%s', target='%s', port=%s"
             create_script(
                 [('%s' % self.name, 'collective.recipe.rsync.__init__', 'rsync')],
                 working_set, executable, bindir, arguments=arguments % (
