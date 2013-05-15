@@ -1,11 +1,14 @@
 Changelog
 ---------
 
-2.2.0 (2012-09-10)
+2.2.0 (unreleased)
 ~~~~~~~~~~~~~~~~~~
 
 * Add `ignore` support
   [aclark]
+  
+* None have quote around when script option is use and port is not in used #3
+  [bsuttor]
 
 2.1.0 (2012-04-09)
 ~~~~~~~~~~~~~~~~~~
