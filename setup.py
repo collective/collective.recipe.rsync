@@ -2,6 +2,7 @@ from setuptools import find_packages
 from setuptools import setup
 import os
 
+
 VERSION = '2.2.0'
 
 
@@ -36,6 +37,7 @@ setup(
         'collective.recipe'
     ],
     packages=find_packages(),
+    test_suite='collective.recipe.rsync.tests.TestSuite',
     url='http://collective.github.com/collective.recipe.rsync',
     version=VERSION,
     zip_safe=False,
