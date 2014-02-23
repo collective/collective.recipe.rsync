@@ -14,6 +14,7 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Programming Language :: Python :: 2.7',
         'License :: OSI Approved :: Zope Public License',
     ],
     description='A zc.buildout recipe to copy files from one location\
@@ -26,10 +27,11 @@ setup(
         'setuptools',
         'zc.buildout',
     ],
+    keywords='plone rsync',
     license='ZPL',
     long_description=(
-        open('README.rst').read() +
-        open(os.path.join('docs', 'HISTORY.txt')).read()
+        open('README.rst').read() + '\n' +
+        open('CHANGES.rst').read()
     ),
     name='collective.recipe.rsync',
     namespace_packages=[
