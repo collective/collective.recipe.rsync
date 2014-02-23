@@ -21,7 +21,7 @@ Add a new section to your ``buildout.cfg`` file to use the ``collective.recipe.r
     source = ${buildout:directory}/var/filestorage/Data.fs
     target = /var/backup
 
-This copies a Plone Data.fs file from `source` to `target`.
+This copies a Plone Data.fs file from the `source` to the `target`.
 
 Specify alternate SSH port
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
