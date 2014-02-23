@@ -12,6 +12,8 @@ _LOG = logging.getLogger("rsync")
 line = ('-----------------------------------' +
         '-----------------------------------')
 
+OPTIONS = '-av --partial --progress'
+
 def rsync(source=None, target=None, port=None):
     if port:
         cmd = ['rsync', '-e', 'ssh -p %s' % port, '-av', '--partial',
