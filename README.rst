@@ -5,7 +5,7 @@ Introduction
 
 .. Note::
 
-    ``collective.recipe.rsync`` currently assumes you have a UNIX-based operating system and that the ``rsync`` binary is in your path when you execute buildout or the rsync script.
+    ``collective.recipe.rsync`` currently assumes you have a UNIX-based operating system and that the ``rsync`` binary is in your path when you run Buildout or the ``rsync`` script.
 
 Installation
 ------------
