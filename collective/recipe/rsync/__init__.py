@@ -8,7 +8,7 @@ from pkg_resources import working_set
 from sys import executable
 from zc.buildout.easy_install import scripts as create_script
 
-
+CMD = 'rsync'
 LINE = ('-----------------------------------' +
         '-----------------------------------')
 LOG = logging.getLogger("rsync")
