@@ -37,7 +37,7 @@ def rsync(rsync_options=None, source=None, target=None, port=None):
     LOG.info('Running rsync with command: ')
     LOG.info('  $ %s' % ' '.join(cmd))
     LOG.info(
-        'Note: depending on the size and location of the source file(s)'
+        'Note: depending on size & location of source file(s),'
         ' this may take a while!'
     )
     LOG.info(LINE)
