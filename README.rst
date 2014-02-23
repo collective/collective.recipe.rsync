@@ -59,7 +59,7 @@ You can specify files to ignore with the ignore option::
 Configure options
 ~~~~~~~~~~~~~~~~~
 
-The default options are ``-avp --partial --progress``. Use the options parameter to change them e.g.::
+The default options are ``-avp --partial --progress``. Use the ``options`` parameter to change them e.g.::
 
     [backup]
     recipe = collective.recipe.rsync
