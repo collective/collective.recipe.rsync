@@ -26,7 +26,7 @@ This copies a Plone Data.fs file from the `source` to the `target`.
 Create a script
 ~~~~~~~~~~~~~~~
 
-Normally ``collective.recipe.rsync`` will run ``rsync`` during the recipe installation. Optionally you can create a script to execute ``rsync`` later by configuring the ``script = true`` option::
+Normally ``collective.recipe.rsync`` will run ``rsync`` during the recipe installation. Optionally you can create a script to execute ``rsync`` later by configuring the ``script = true`` option e.g.::
 
     [backup]
     recipe = collective.recipe.rsync
@@ -69,8 +69,6 @@ Optionally you may specify an alternate SSH port for ``rsync`` to use e.g.::
     source = ${buildout:directory}/var/filestorage/Data.fs
     target = /var/backup
     port = 2222
-
-This copies a Data.fs file from `remotehost` to `var/filestorage/Data.fs` using port 2222.
 
 .. _`zc.buildout`: http://pypi.python.org/pypi/zc.buildout
 .. _`z3c.recipe.usercrontab`: http://pypi.python.org/pypi/z3c.recipe.usercrontab
