@@ -5,7 +5,7 @@ Introduction
 
 .. Note::
 
-    ``collective.recipe.rsync`` currently assumes you have a UNIX-based operating system and that the ``rsync`` binary is in your path when you run Buildout or the ``rsync`` script.
+    ``collective.recipe.rsync`` assumes you have a UNIX-based operating system and the ``rsync`` binary is in your PATH when you run Buildout or the ``rsync`` script.
 
 Installation
 ------------
@@ -23,19 +23,6 @@ Add a new section to your ``buildout.cfg`` file to use the ``collective.recipe.r
 
 This copies a Plone Data.fs file from the `source` to the `target`.
 
-Specify alternate SSH port
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Optionally you may specify an alternate SSH port for ``rsync`` to use::
-
-    [backup]
-    recipe = collective.recipe.rsync
-    source = ${buildout:directory}/var/filestorage/Data.fs
-    target = /var/backup
-    port = 22000
-
-This copies a Data.fs file from `remotehost` to `var/filestorage/Data.fs` using port 22000.
-
 Create a script
 ~~~~~~~~~~~~~~~
 
@@ -49,13 +36,6 @@ Normally ``collective.recipe.rsync`` will run ``rsync`` during the recipe instal
 
 This is useful in cases where you want to automate an ``rsync`` script with cron e.g. via `z3c.recipe.usercrontab`_.
 
-Ignore files
-~~~~~~~~~~~~
-
-You can specify files to ignore with the ignore option::
-
-    ignore = index old
-
 Configure options
 ~~~~~~~~~~~~~~~~~
 
@@ -67,6 +47,26 @@ The default options are ``-av --partial --progress``. Use the ``options`` parame
     target = /var/backup
     # Omit "-v" option
     options = -a --partial --progress
+
+Ignore files
+~~~~~~~~~~~~
+
+You can specify files to ignore with the ignore option::
+
+    ignore = index old
+
+Specify alternate SSH port
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Optionally you may specify an alternate SSH port for ``rsync`` to use::
+
+    [backup]
+    recipe = collective.recipe.rsync
+    source = ${buildout:directory}/var/filestorage/Data.fs
+    target = /var/backup
+    port = 22000
+
+This copies a Data.fs file from `remotehost` to `var/filestorage/Data.fs` using port 22000.
 
 .. _`zc.buildout`: http://pypi.python.org/pypi/zc.buildout
 .. _`z3c.recipe.usercrontab`: http://pypi.python.org/pypi/z3c.recipe.usercrontab

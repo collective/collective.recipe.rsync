@@ -12,7 +12,7 @@ LOG = logging.getLogger("rsync")
 OPTIONS = '-av --partial --progress'
 
 
-def rsync(rsync_options=None, source=None, target=None, port=None):
+def rsync(exclude=None, port=None, rsync_options=None, source=None, target=None):
     """
     Parse options, build and run command
     """
@@ -22,6 +22,8 @@ def rsync(rsync_options=None, source=None, target=None, port=None):
         rsync_options = OPTIONS.split()
     else:
         rsync_options = rsync_options.split()
+    if exclude:
+        rsync_options += ['--exclude=%s' % exclude]
     if port:
         rsync_options += ['-e', 'ssh -p %s' % port]
 
@@ -29,7 +31,6 @@ def rsync(rsync_options=None, source=None, target=None, port=None):
     rsync_options.append(target)
 
     # Build cmd
-
     cmd = rsync_options
     cmd.insert(0, CMD)
 
@@ -55,9 +56,12 @@ class Recipe(object):
         self.buildout, self.name, self.options = buildout, name, options
         self.source = options['source']
         self.target = options['target']
+        self.exclude = None
         self.port = None
         self.rsync_options = None
         self.script = False
+        if 'exclude' in self.options:
+            self.exclude = options['exclude']
         if 'options' in self.options:
             self.rsync_options = options['options']
         if 'port' in options:
@@ -87,10 +91,12 @@ class Recipe(object):
             # if we make it this far, script option is not set so we execute
             # as buildout runs
             rsync(
+                exclude=self.exclude,
+                port=self.port,
                 rsync_options=self.rsync_options,
                 source=self.source,
                 target=self.target,
-                port=self.port)
+                )
             return tuple()
 
     def update(self):
