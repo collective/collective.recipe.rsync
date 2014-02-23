@@ -8,11 +8,12 @@ from pkg_resources import working_set
 from sys import executable
 from zc.buildout.easy_install import scripts as create_script
 
-LOG = logging.getLogger("rsync")
-line = ('-----------------------------------' +
-        '-----------------------------------')
 
+LINE = ('-----------------------------------' +
+        '-----------------------------------')
+LOG = logging.getLogger("rsync")
 OPTIONS = '-av --partial --progress'
+
 
 def rsync(source=None, target=None, port=None):
     if port:
@@ -20,11 +21,11 @@ def rsync(source=None, target=None, port=None):
             '--progress', source, target]
     else:
         cmd = ['rsync', '-av', '--partial', '--progress', source, target]
-    LOG.info(line)
+    LOG.info(LINE)
     LOG.info('Running rsync with command: ')
     LOG.info('  $ %s' % ' '.join(cmd))
     LOG.info('  Note: depending on the source file(s) size and location, this may take a while!')
-    LOG.info(line)
+    LOG.info(LINE)
     subprocess.call(cmd)
     LOG.info('Done.')
 
