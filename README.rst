@@ -62,15 +62,15 @@ You can exclude files with the ``exclude`` option e.g.::
 Specify alternate SSH port
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Optionally you may specify an alternate SSH port for ``rsync`` to use::
+Optionally you may specify an alternate SSH port for ``rsync`` to use e.g.::
 
     [backup]
     recipe = collective.recipe.rsync
     source = ${buildout:directory}/var/filestorage/Data.fs
     target = /var/backup
-    port = 22000
+    port = 2222
 
-This copies a Data.fs file from `remotehost` to `var/filestorage/Data.fs` using port 22000.
+This copies a Data.fs file from `remotehost` to `var/filestorage/Data.fs` using port 2222.
 
 .. _`zc.buildout`: http://pypi.python.org/pypi/zc.buildout
 .. _`z3c.recipe.usercrontab`: http://pypi.python.org/pypi/z3c.recipe.usercrontab
