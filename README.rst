@@ -10,7 +10,7 @@ Introduction
 Installation
 ------------
 
-Add a new section to your ``buildout.cfg`` file configured to use the ``collective.recipe.rsync`` recipe, e.g.::
+Add a new section to your ``buildout.cfg`` file to use the ``collective.recipe.rsync`` recipe, e.g.::
 
     [buildout]
     extends = https://raw.github.com/plock/pins/master/plone-4-3
