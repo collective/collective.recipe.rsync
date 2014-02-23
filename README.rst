@@ -59,14 +59,14 @@ You can specify files to ignore with the ignore option::
 Configure options
 ~~~~~~~~~~~~~~~~~
 
-The default options are ``-avp --partial --progress``. Use the ``options`` parameter to change them e.g.::
+The default options are ``-av --partial --progress``. Use the ``options`` parameter to change them e.g.::
 
     [backup]
     recipe = collective.recipe.rsync
     source = ${buildout:directory}/var/filestorage/Data.fs
     target = /var/backup
-    # Omit "-p" option
-    options = -av --partial --progress
+    # Omit "-v" option
+    options = -a --partial --progress
 
 .. _`zc.buildout`: http://pypi.python.org/pypi/zc.buildout
 .. _`z3c.recipe.usercrontab`: http://pypi.python.org/pypi/z3c.recipe.usercrontab
