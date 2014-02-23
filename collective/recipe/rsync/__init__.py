@@ -27,9 +27,13 @@ def rsync(rsync_options=None, source=None, target=None, port=None):
     if port:
         rsync_options += ['-e', 'ssh -p %s' % port]
 
+    rsync_options.append(source)
+    rsync_options.append(target)
+
     # Build cmd
 
-    cmd = rsync_options.insert(0, CMD)
+    cmd = rsync_options
+    cmd.insert(0, CMD)
 
     LOG.info(LINE)
     LOG.info('Running rsync with command: ')
