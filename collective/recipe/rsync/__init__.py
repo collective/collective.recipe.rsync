@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Recipe rsync"""
-
 import logging
 import subprocess
 from pkg_resources import working_set
 from sys import executable
 from zc.buildout.easy_install import scripts as create_script
 
+
 CMD = 'rsync'
-LINE = ('-----------------------------------' +
-        '-----------------------------------')
+LINE = '-' * 80
 LOG = logging.getLogger("rsync")
 OPTIONS = '-av --partial --progress'
 
@@ -38,8 +36,10 @@ def rsync(rsync_options=None, source=None, target=None, port=None):
     LOG.info(LINE)
     LOG.info('Running rsync with command: ')
     LOG.info('  $ %s' % ' '.join(cmd))
-    LOG.info('  Note: depending on the source file(s) size and location, ')
-    LOG.info('  this may take a while!')
+    LOG.info(
+        'Note: depending on the size and location of the source file(s)'
+        ' this may take a while!'
+    )
     LOG.info(LINE)
     subprocess.call(cmd)
     LOG.info('Done.')
@@ -53,11 +53,13 @@ class Recipe(object):
         """
         """
         self.buildout, self.name, self.options = buildout, name, options
-        self.rsync_options = options['options']
         self.source = options['source']
         self.target = options['target']
         self.port = None
+        self.rsync_options = None
         self.script = False
+        if 'options' in self.options:
+            self.rsync_options = options['options']
         if 'port' in options:
             self.port = options['port']
         if 'script' in options:
