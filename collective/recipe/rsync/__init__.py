@@ -8,7 +8,7 @@ from pkg_resources import working_set
 from sys import executable
 from zc.buildout.easy_install import scripts as create_script
 
-_LOG = logging.getLogger("rsync")
+LOG = logging.getLogger("rsync")
 line = ('-----------------------------------' +
         '-----------------------------------')
 
@@ -20,13 +20,13 @@ def rsync(source=None, target=None, port=None):
             '--progress', source, target]
     else:
         cmd = ['rsync', '-av', '--partial', '--progress', source, target]
-    _LOG.info(line)
-    _LOG.info('Running rsync with command: ')
-    _LOG.info('  $ %s' % ' '.join(cmd))
-    _LOG.info('  Note: depending on the source file(s) size and location, this may take a while!')
-    _LOG.info(line)
+    LOG.info(line)
+    LOG.info('Running rsync with command: ')
+    LOG.info('  $ %s' % ' '.join(cmd))
+    LOG.info('  Note: depending on the source file(s) size and location, this may take a while!')
+    LOG.info(line)
     subprocess.call(cmd)
-    _LOG.info('Done.')
+    LOG.info('Done.')
 
 
 class Recipe(object):
