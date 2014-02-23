@@ -19,7 +19,7 @@ Add a new section to your ``buildout.cfg`` file configured to use the ``collecti
     [backup]
     recipe = collective.recipe.rsync
     source = ${buildout:directory}/var/filestorage/Data.fs
-    target = /backup
+    target = /var/backup
 
 This copies a Plone Data.fs file from `source` to `target`.
 
@@ -31,7 +31,7 @@ Optionally you may specify an alternate SSH port for ``rsync`` to use::
     [backup]
     recipe = collective.recipe.rsync
     source = ${buildout:directory}/var/filestorage/Data.fs
-    target = /backup
+    target = /var/backup
     port = 22000
 
 This copies a Data.fs file from `remotehost` to `var/filestorage/Data.fs` using port 22000.
@@ -44,7 +44,7 @@ Normally ``collective.recipe.rsync`` will run ``rsync`` during the recipe instal
     [backup]
     recipe = collective.recipe.rsync
     source = ${buildout:directory}/var/filestorage/Data.fs
-    target = /backup
+    target = /var/backup
     script = true
 
 This is useful in cases where you want to automate an ``rsync`` script with cron e.g. via `z3c.recipe.usercrontab`_.
@@ -64,7 +64,7 @@ The default options are ``-avp --partial --progress``. Use the options parameter
     [backup]
     recipe = collective.recipe.rsync
     source = ${buildout:directory}/var/filestorage/Data.fs
-    target = /backup
+    target = /var/backup
     # Omit "-p" option
     options = -av --partial --progress
 
