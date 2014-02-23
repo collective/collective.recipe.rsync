@@ -49,11 +49,15 @@ The default options are ``-av --partial --progress``. Use the ``options`` parame
     options = -a --partial --progress
 
 Exclude files
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
-You can exclude files with the ``exclude`` option::
+You can exclude files with the ``exclude`` option e.g.::
 
-    exclude = .index .old
+    [backup]
+    recipe = collective.recipe.rsync
+    source = ${buildout:directory}/var/filestorage/Data.fs
+    target = /var/backup
+    exclude = Data.fs.index Data.fs.old
 
 Specify alternate SSH port
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
