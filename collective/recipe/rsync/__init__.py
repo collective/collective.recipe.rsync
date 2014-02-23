@@ -23,7 +23,8 @@ def rsync(exclude=None, port=None, rsync_options=None, source=None, target=None)
     else:
         rsync_options = rsync_options.split()
     if exclude:
-        rsync_options += ['--exclude=%s' % exclude]
+        for e in exclude.split():
+            rsync_options += ['--exclude=%s' % e]
     if port:
         rsync_options += ['-e', 'ssh -p %s' % port]
 

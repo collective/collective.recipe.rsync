@@ -48,12 +48,12 @@ The default options are ``-av --partial --progress``. Use the ``options`` parame
     # Omit "-v" option
     options = -a --partial --progress
 
-Ignore files
+Exclude files
 ~~~~~~~~~~~~
 
-You can specify files to ignore with the ignore option::
+You can exclude files with the ``exclude`` option::
 
-    ignore = index old
+    exclude = .index .old
 
 Specify alternate SSH port
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
