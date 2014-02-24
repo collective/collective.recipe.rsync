@@ -76,7 +76,13 @@ class Recipe(object):
         """
         if self.script:
             bindir = self.buildout['buildout']['bin-directory']
-            arguments = "source='%s', target='%s', port=%s"
+            arguments = "exclude='%s', rsync_options=%s, port=%s, source='%s', target='%s'" % (
+                self.exclude,
+                self.rsync_options,
+                self.port,
+                self.source,
+                self.target,
+            )
             create_script(
                 [
                     (
@@ -86,7 +92,7 @@ class Recipe(object):
                 working_set,
                 executable,
                 bindir,
-                arguments=arguments % (self.source, self.target, self.port))
+                arguments=arguments)
             return tuple()
         else:
             # if we make it this far, script option is not set so we execute
