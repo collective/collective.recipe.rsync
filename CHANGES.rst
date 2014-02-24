@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.2.2 (02/23/2014)
+~~~~~~~~~~~~~~~~~~
+
+- Bug fix: provide all parameters to script option unless None
+
 2.2.1 (02/23/2014)
 ~~~~~~~~~~~~~~~~~~
 
@@ -9,7 +14,7 @@ Changelog
 2.2.0 (02/23/2014)
 ~~~~~~~~~~~~~~~~~~
 
-- Add `ignore` support
+- Add ``exclude`` support
   
 - None have quote around when script option is use and port is not in use. Fixes #3
   [bsuttor]
