@@ -87,7 +87,7 @@ class Recipe(object):
                 executable,
                 bindir,
                 arguments=arguments % (self.source, self.target, self.port))
-            return tuple((bindir + '/' + 'rsync',))
+            return tuple()
         else:
             # if we make it this far, script option is not set so we execute
             # as buildout runs
