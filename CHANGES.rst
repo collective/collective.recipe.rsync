@@ -1,22 +1,22 @@
 Changelog
 ---------
 
-2.3.0 2019-03-21
-~~~~~~~~~~~~~~~~
+2.3.0 (2019-03-21)
+~~~~~~~~~~~~~~~~~~
 
 - Python 3 fix [petschki]
 
-2.2.2 (02/23/2014)
+2.2.2 (2014-02-23)
 ~~~~~~~~~~~~~~~~~~
 
 - Bug fix: provide all parameters to script option unless None
 
-2.2.1 (02/23/2014)
+2.2.1 (2014-02-23)
 ~~~~~~~~~~~~~~~~~~
 
 - Bug fix: provide all parameters to script option
 
-2.2.0 (02/23/2014)
+2.2.0 (2014-02-23)
 ~~~~~~~~~~~~~~~~~~
 
 - Add ``exclude`` support
