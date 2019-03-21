@@ -76,8 +76,15 @@ class Recipe(object):
         """
         if self.script:
             bindir = self.buildout['buildout']['bin-directory']
+            base_args = {
+                'exclude': self.exclude,
+                'rsync_options': self.rsync_options,
+                'port': self.port,
+                'source': self.source,
+                'target': self.target,
+            }
             arguments = ''
-            for key, value in {'exclude': self.exclude, 'rsync_options': self.rsync_options, 'port': self.port, 'source': self.source, 'target': self.target}.iteritems():
+            for key, value in base_args.items():
                 if value is not None:
                     arguments += "%s='%s', " % (key, value)
             create_script(

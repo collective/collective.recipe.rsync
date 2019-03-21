@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.3.0 2019-03-21
+~~~~~~~~~~~~~~~~
+
+- Python 3 fix [petschki]
+
 2.2.2 (02/23/2014)
 ~~~~~~~~~~~~~~~~~~
 
@@ -9,13 +14,13 @@ Changelog
 2.2.1 (02/23/2014)
 ~~~~~~~~~~~~~~~~~~
 
-- Bug fix: provide all parameters to script option 
+- Bug fix: provide all parameters to script option
 
 2.2.0 (02/23/2014)
 ~~~~~~~~~~~~~~~~~~
 
 - Add ``exclude`` support
-  
+
 - None have quote around when script option is use and port is not in use. Fixes #3
   [bsuttor]
 
@@ -56,7 +61,7 @@ Changelog
 1.6 (2011-01-20)
 ~~~~~~~~~~~~~~~~
 
--  Add ``script`` option 
+-  Add ``script`` option
 
   - Generates bin/rsync script
   - Disables rsync during buildout execution
@@ -97,4 +102,4 @@ Changelog
 0.1 (2009-08-26)
 ~~~~~~~~~~~~~~~~
 
-- Created recipe with ZopeSkel 
+- Created recipe with ZopeSkel
