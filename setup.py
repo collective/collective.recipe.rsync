@@ -3,7 +3,7 @@ from setuptools import setup
 import os
 
 
-VERSION = '2.3.0'
+VERSION = '2.3.1.DEV0'
 
 
 setup(
